@@ -50,12 +50,7 @@ jobs:
             mkdir -p "$RES/$NAME"
             cp -f "$ICON_DIR"/* "$RES/$NAME/"
           done
-          if [ ! -f "$RES/values/colors.xml" ]; then
-            echo '<resources><color name="ic_launcher_background">#29251D</color></resources>' > "$RES/values/colors.xml"
-          elif ! grep -q 'name="ic_launcher_background"' "$RES/values/colors.xml"; then
-            sed -i 's#</resources>#<color name="ic_launcher_background">#29251D</color></resources>#' "$RES/values/colors.xml"
-          fi
-
+          
       - name: Sync app
         run: npx cap sync android
 
