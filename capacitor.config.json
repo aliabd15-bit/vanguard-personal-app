@@ -1,0 +1,6 @@
+{
+  "appId": "ir.vanguardteam.personal",
+  "appName": "Vanguard Team",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
