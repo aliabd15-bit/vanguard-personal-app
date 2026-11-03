@@ -1,0 +1,10 @@
+{
+  "name": "Vanguard Team",
+  "short_name": "Vanguard",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#c5a15a"
+}
