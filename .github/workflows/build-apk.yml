@@ -41,18 +41,17 @@ jobs:
       - name: Create Android project
         run: npx cap add android
 
+      - name: Sync app
+        run: npx cap sync android
+
       - name: Apply Vanguard launcher icon
         run: |
           RES="android/app/src/main/res"
-          mkdir -p "$RES/values"
           for ICON_DIR in android-icons/mipmap-*; do
             NAME=$(basename "$ICON_DIR")
             mkdir -p "$RES/$NAME"
             cp -f "$ICON_DIR"/* "$RES/$NAME/"
           done
-          
-      - name: Sync app
-        run: npx cap sync android
 
       - name: Build APK
         working-directory: android
