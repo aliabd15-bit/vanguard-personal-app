@@ -53,6 +53,16 @@ jobs:
             cp -f "$ICON_DIR"/* "$RES/$NAME/"
           done
 
+      - name: Set Vanguard adaptive icon background
+        run: |
+          FILE="android/app/src/main/res/values/ic_launcher_background.xml"
+          if [ -f "$FILE" ]; then
+            sed -E -i 's|(<color name="ic_launcher_background">)[^<]*(</color>)|\1#29251D\2|' "$FILE"
+          else
+            mkdir -p android/app/src/main/res/values
+            printf '%s\n' '<?xml version="1.0" encoding="utf-8"?>' '<resources><color name="ic_launcher_background">#29251D</color></resources>' > "$FILE"
+          fi
+          
       - name: Build APK
         working-directory: android
         run: |
