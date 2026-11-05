@@ -52,6 +52,8 @@ jobs:
             mkdir -p "$RES/$NAME"
             cp -f "$ICON_DIR"/* "$RES/$NAME/"
           done
+          mkdir -p "$RES/values"
+          cp -f android-icons/colors.xml "$RES/values/colors.xml"
 
       - name: Build APK
         working-directory: android
